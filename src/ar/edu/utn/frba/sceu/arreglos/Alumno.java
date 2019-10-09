@@ -1,12 +1,13 @@
 package ar.edu.utn.frba.sceu.arreglos;
 
 public class Alumno {
-	
+	//Atributos
 	private String nombre;
 	private String apellido;
 	private float nota1;
 	private float nota2;
 	
+	//Metodos
 	public Alumno(String nombre, String apellido) {
 		this.nombre = nombre;
 		this.apellido = apellido;
@@ -44,5 +45,8 @@ public class Alumno {
 		this.nota2 = nota2;
 	}
 	
+	public float promedio() {
+		return (this.nota1 + this.nota2)/2;
+	}
 	
 }
