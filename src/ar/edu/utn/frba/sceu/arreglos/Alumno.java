@@ -1,11 +1,13 @@
 package ar.edu.utn.frba.sceu.arreglos;
 
+import java.util.*;
+
 public class Alumno {
 	//Atributos
 	private String nombre;
 	private String apellido;
-	private float nota1;
-	private float nota2;
+	private ArrayList<Integer> notas;
+	//private double promedio = 0;
 	
 	//Metodos
 	public Alumno(String nombre, String apellido) {
@@ -29,24 +31,17 @@ public class Alumno {
 		this.apellido = apellido;
 	}
 
-	public float getNota1() {
-		return nota1;
+	public void cargarNota(int nota) {
+		this.notas.add(nota);
 	}
 
-	public void setNota1(float nota1) {
-		this.nota1 = nota1;
+	public double getPromedio() {
+		int i, suma= 0;
+		
+		for(i=0; i < this.notas.size(); i++) {
+			suma += this.notas.get(i);
+		}
+			
+		return (suma/this.notas.size());
 	}
-
-	public float getNota2() {
-		return nota2;
-	}
-
-	public void setNota2(float nota2) {
-		this.nota2 = nota2;
-	}
-	
-	public float promedio() {
-		return (this.nota1 + this.nota2)/2;
-	}
-	
 }
